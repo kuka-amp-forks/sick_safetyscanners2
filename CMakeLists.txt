@@ -46,7 +46,7 @@ target_link_libraries(sick_safetyscanners2_node
         sick_safetyscanners_base::sick_safetyscanners_base
         ${Boost_LIBRARIES})
 
-ament_target_dependencies(sick_safetyscanners2_node ${dependencies})
+target_link_libraries(sick_safetyscanners2_node rclcpp::rclcpp rclcpp_lifecycle::rclcpp_lifecycle lifecycle_msgs::lifecycle_msgs sensor_msgs::sensor_msgs sick_safetyscanners_base::sick_safetyscanners_base sick_safetyscanners2_interfaces::sick_safetyscanners2_interfaces diagnostic_updater::diagnostic_updater)
 
 target_include_directories(sick_safetyscanners2_node PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -62,7 +62,7 @@ target_link_libraries(sick_safetyscanners2_lifecycle_node
         sick_safetyscanners_base::sick_safetyscanners_base
         ${Boost_LIBRARIES})
 
-ament_target_dependencies(sick_safetyscanners2_lifecycle_node ${dependencies})
+target_link_libraries(sick_safetyscanners2_lifecycle_node rclcpp::rclcpp rclcpp_lifecycle::rclcpp_lifecycle lifecycle_msgs::lifecycle_msgs sensor_msgs::sensor_msgs sick_safetyscanners_base::sick_safetyscanners_base sick_safetyscanners2_interfaces::sick_safetyscanners2_interfaces diagnostic_updater::diagnostic_updater)
 
 target_include_directories(sick_safetyscanners2_lifecycle_node PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
